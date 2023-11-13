@@ -5,9 +5,9 @@ function addToCart(itemName, quantity) {
 
 let cart = [];
 
-function addToCart(itemName, quantity) {
+function addToCart(itemName, description, price, quantity) {
     // Add the item to the cart array
-    cart.push({ itemName, quantity });
+    cart.push({ itemName, description, price, quantity });
 
     // Update the cart count
     updateCartCount();
