@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster+Two:ital@1&display=swap">
+    <script src="https://kit.fontawesome.com/a5127b0cae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+          font-family: "Lobster Two", serif;
+        }
+        </style>
+    <title>Donut Delights</title>
+</head>
+<body style="background: linear-gradient(to bottom, #fc8ab0, #33fff8);" class="bg-pink-200">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-8 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-4xl font-bold">Southern Maid Donuts</a>
+            <div class="text-3xl relative">
+                <a href="#" class="mx-2">Home</a>
+                <a href="#" class="mx-2">Menu</a>
+               
+                <a href="#" class="mx-2">Login</a>
+                <a href="#" class="mx-2 cart-link">
+                    Cart 
+                    <i class="fas fa-cart-shopping ml-1" style="color: #f978e7;"></i>
+                    <span class="cart-count bg-red-500 text-white rounded-full px-2 py-1 text-xs absolute top-0 right-0 -mt-1 -mr-1 hidden">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto mt-8 p-36 bg-cover bg-center relative shadow-2xl text-center border-8 border-white rounded-3xl" style="background-image: url('./images/donuts_day_dribble.gif');">
+        <div class=" rounded-3xl absolute inset-0"></div>
+        <h1 class="text-6xl font-bold text-white z-10 relative">Welcome to Southern Maid Donuts</h1>
+        <p class="text-2xl text-white z-10 relative">Indulge in our delightful and freshly baked donuts. A treat for your taste buds!</p>
+    </div>
+
+    <!-- Menu Section -->
+    <section class="container mx-auto mt-8">
+        <h2 class="text-5xl font-bold mb-4">Our Menu</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Menu Item - Classic Glazed -->
+            <div class="bg-[#FF7487] p-4 rounded shadow-md border-8 border-white rounded-3xl">
+                <img src="./images/glazed.jpg" alt="Classic Glazed" class="w-full h-64 object-cover mb-4 rounded">
+                <h3 class="text-2xl font-bold mb-2">Classic Glazed</h3>
+                <p class="text-xl font-sans">Our signature glazed donut with a perfect balance of sweetness.</p>
+                
+                <!-- Price Range -->
+                <p class="text-lg font-bold mt-2">Price Range: $.50 - $6.00</p>
+                
+                <!-- Add to Cart Button -->
+                <div class="flex items-center mt-4">
+                    <button onclick="addToCart('Classic Glazed', '1pc')" class="bg-blue-500 text-white p-2 rounded-md mr-2">1pc</button>
+                    <button onclick="addToCart('Classic Glazed', 'Half Dozen')" class="bg-blue-500 text-white p-2 rounded-md mr-2">Half Dozen</button>
+                    <button onclick="addToCart('Classic Glazed', 'Full Dozen')" class="bg-blue-500 text-white p-2 rounded-md">Full Dozen</button>
+                </div>
+            </div>
+    
+            <!-- Menu Item - Chocolate Sprinkle -->
+            <div class="bg-pink-300 p-4 rounded shadow-md border-8 border-white rounded-3xl">
+                <img src="./images/chocolate-sprinkle.webp" alt="Chocolate Sprinkle" class="w-full h-64 object-cover mb-4 rounded">
+                <h3 class="text-2xl font-bold mb-2">Chocolate Sprinkle</h3>
+                <p class="text-xl font-sans">Chocolate lovers rejoice! A donut covered in rich chocolate and colorful sprinkles.</p>
+                
+                <!-- Price Range -->
+                <p class="text-lg font-bold mt-2">Price Range: $.65 - $6.00</p>
+                
+                <!-- Add to Cart Button -->
+                <div class="flex items-center mt-4">
+                    <button onclick="addToCart('Chocolate Sprinkle', '1pc')" class="bg-blue-500 text-white p-2 rounded-md mr-2">1pc</button>
+                    <button onclick="addToCart('Chocolate Sprinkle', 'Half Dozen')" class="bg-blue-500 text-white p-2 rounded-md mr-2">Half Dozen</button>
+                    <button onclick="addToCart('Chocolate Sprinkle', 'Full Dozen')" class="bg-blue-500 text-white p-2 rounded-md">Full Dozen</button>
+                </div>
+            </div>
+    
+            <!-- Menu Item - Strawberry Delight -->
+            <div class="bg-pink-300 p-4 rounded shadow-md border-8 border-white rounded-3xl">
+                <img src="./images/Strawberry-Cream-Filled-Doughnuts.jpg" alt="Strawberry Delight" class="w-full h-64 object-cover mb-4 rounded">
+                <h3 class="text-2xl font-bold mb-2">Strawberry Delight</h3>
+                <p class="text-xl font-sans">Fresh strawberry glaze atop a fluffy donut, a fruity delight.</p>
+                
+                <!-- Price Range -->
+                <p class="text-lg font-bold mt-2">Price Range: $1.25 - $8.50</p>
+                
+                <!-- Add to Cart Button -->
+                <div class="flex items-center mt-4">
+                    <button onclick="addToCart('Strawberry Delight', '1pc')" class="bg-blue-500 text-white p-2 rounded-md mr-2">1pc</button>
+                    <button onclick="addToCart('Strawberry Delight', 'Half Dozen')" class="bg-blue-500 text-white p-2 rounded-md mr-2">Half Dozen</button>
+                    <button onclick="addToCart('Strawberry Delight', 'Full Dozen')" class="bg-blue-500 text-white p-2 rounded-md">Full Dozen</button>
+                </div>
+            </div>
+            <div class="bg-pink-300 p-4 rounded shadow-md border-8 border-white rounded-3xl">
+                <img src="./images/blueberry-bliss.jpg" alt="Classic Glazed" class="w-full h-64 object-cover mb-4 rounded">
+                <h3 class="text-2xl font-bold mb-2">Blueberry Bliss Bomb</h3>
+                <p class="text-xl font-sans">Experience a burst of fruity goodness with our Blueberry Bliss Bomb. This delightful donut features a fluffy interior filled with a luscious blueberry compote and is coated in a sweet glaze, making it a heavenly treat for blueberry enthusiasts.</p>
+                
+                <!-- Price Range -->
+                <p class="text-lg font-bold mt-2">Price Range: $.50 - $6.00</p>
+                
+                <!-- Add to Cart Button -->
+                <div class="flex items-center mt-4">
+                    <button onclick="addToCart('Classic Glazed', '1pc')" class="bg-blue-500 text-white p-2 rounded-md mr-2">1pc</button>
+                    <button onclick="addToCart('Classic Glazed', 'Half Dozen')" class="bg-blue-500 text-white p-2 rounded-md mr-2">Half Dozen</button>
+                    <button onclick="addToCart('Classic Glazed', 'Full Dozen')" class="bg-blue-500 text-white p-2 rounded-md">Full Dozen</button>
+                </div>
+            </div>
+            <div class="bg-pink-300 p-4 rounded shadow-md border-8 border-white rounded-3xl">
+                <img src="./images/cookies-cream.jpg" alt="Classic Glazed" class="w-full h-64 object-cover mb-4 rounded">
+                <h3 class="text-2xl font-bold mb-2">Cookies 'n Cream Dream</h3>
+                <p class="text-xl font-sans">Dive into sweet nostalgia with our Cookies 'n Cream Dream. This decadent donut is generously topped with crushed chocolate sandwich cookies, creating a delightful blend of rich cocoa and creamy goodness.</p>
+                
+                <!-- Price Range -->
+                <p class="text-lg font-bold mt-2">Price Range: $.50 - $6.00</p>
+                
+                <!-- Add to Cart Button -->
+                <div class="flex items-center mt-4">
+                    <button onclick="addToCart('Classic Glazed', '1pc')" class="bg-blue-500 text-white p-2 rounded-md mr-2">1pc</button>
+                    <button onclick="addToCart('Classic Glazed', 'Half Dozen')" class="bg-blue-500 text-white p-2 rounded-md mr-2">Half Dozen</button>
+                    <button onclick="addToCart('Classic Glazed', 'Full Dozen')" class="bg-blue-500 text-white p-2 rounded-md">Full Dozen</button>
+                </div>
+            </div>
+            <div class="bg-pink-300 p-4 rounded shadow-md border-8 border-white rounded-3xl">
+                <img src="./images/lemon-raspberry-donuts.jpg" alt="Classic Glazed" class="w-full h-64 object-cover mb-4 rounded">
+                <h3 class="text-2xl font-bold mb-2">Raspberry Lemonade Burst</h3>
+                <p class="text-xl font-sans">Refresh your taste buds with our Raspberry Lemonade Burst. This zesty donut features a burst of tangy raspberry glaze complemented by a hint of citrusy lemon, creating a perfect harmony of flavors reminiscent of a summer afternoon.</p>
+                
+                <!-- Price Range -->
+                <p class="text-lg font-bold mt-2">Price Range: $.50 - $6.00</p>
+                
+                <!-- Add to Cart Button -->
+                <div class="flex items-center mt-4">
+                    <button onclick="addToCart('Classic Glazed', '1pc')" class="bg-blue-500 text-white p-2 rounded-md mr-2">1pc</button>
+                    <button onclick="addToCart('Classic Glazed', 'Half Dozen')" class="bg-blue-500 text-white p-2 rounded-md mr-2">Half Dozen</button>
+                    <button onclick="addToCart('Classic Glazed', 'Full Dozen')" class="bg-blue-500 text-white p-2 rounded-md">Full Dozen</button>
+                </div>
+            </div>
+
+            <!-- Add more menu items as needed -->
+        </div>
+    </section>
+    
+
+
+    <section class="container mx-auto mt-8 ">
+        <h2 class="text-2xl font-bold mb-4">Testimonials</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial Card 1 -->
+            <div class="bg-white p-4 rounded shadow-lg ">
+                <div class="flex items-center mb-2">
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                </div>
+                <p class="italic mb-2 text-3xl font-sans">"The Classic Glazed donut is a taste of pure bliss! I can't resist having it every morning with my coffee."</p>
+                <p class="text-xl font-bold">- John D.</p>
+            </div>
+    
+            <!-- Testimonial Card 2 -->
+            <div class="bg-white p-4 rounded shadow-lg">
+                <div class="flex items-center mb-2">
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-gray-300">&#9733;</span>
+                </div>
+                <p class="italic mb-2 text-3xl font-sans">"Southern Maid Donuts never disappoints. The Strawberry Delight is a burst of fruity goodness that keeps me coming back."</p>
+                <p class="text-xl font-bold">- Emily S.</p>
+            </div>
+    
+            <!-- Testimonial Card 3 -->
+            <div class="bg-white p-4 rounded shadow-lg">
+                <div class="flex items-center mb-2">
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                    <span class="text-yellow-500">&#9733;</span>
+                </div>
+                <p class="italic mb-2 text-3xl font-sans">"As a chocolate lover, the Chocolate Sprinkle donut is my go-to treat. Absolutely divine!"</p>
+                <p class="text-xl font-bold">- Michael L.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filler Biography Section -->
+    <section class="container mx-auto mt-8 p-8 bg-white rounded shadow-md">
+        <h2 class="text-4xl font-bold mb-4">Our Story</h2>
+        <p class="text-2xl font-sans ">Welcome to "Southern Maid Donuts," a cherished haven for donut enthusiasts! Our story unfolds with a deep-rooted commitment to crafting irresistible pastries that elevate the art of sweetness. Nestled in the heart of our vibrant community, our artisanal donut shop is a testament to flavors, innovation, and unbridled joy. Every sunrise sees our dedicated bakers meticulously handcrafting a medley of delights, ranging from the timeless allure of glazed classics to inventive wonders like raspberry-filled delights. The rich aroma of freshly brewed coffee and warm, golden donuts beckons patrons into a welcoming space where every bite carries the essence of tradition and taste. At Southern Maid Donuts, we invite you to savor the moment, creating cherished memories one delectable donut at a time. Embrace the sweetness of tradition with us!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 text-white mt-8">
+        <div class="container text-3xl mx-auto text-center">
+            <p>&copy; 2023 Southern Maid Donuts</p>
+        </div>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>
+
+
+<!-- tailwind,handlebars,setup a review database user login and coupon usability, likes and dislikes, pictures for menu items, biography, a homepage logo return main page, email verification -->
+
+
+<!-- use chat gpt - yes -->

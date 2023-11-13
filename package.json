@@ -1,0 +1,15 @@
+{
+  "name": "practice-website",
+  "version": "1.0.0",
+  "description": "a small side project to test myself on website design and ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
