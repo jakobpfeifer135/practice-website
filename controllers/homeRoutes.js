@@ -18,10 +18,5 @@ router.get('/cart', async (req, res) => {
     );
 });
 
-// router.get('/login', async (req, res) => {
- 
-//     res.render('loginPage'
 
-//     );
-// });
 module.exports = router;
